@@ -43,6 +43,7 @@ public protocol LocalNotificationActionCapable: LocalNotificationCapable {
 // MARK: - SuperDelegate Local Notification Extension
 
 
+@available(iOS, deprecated: 10.0)
 extension SuperDelegate {
     
     

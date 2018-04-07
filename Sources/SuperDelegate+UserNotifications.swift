@@ -24,6 +24,7 @@ import Foundation
 // MARK: UserNotificationCapable – Opting into this protocol gives your app the ability to register for User Notifications. Adopt RemoteNotification or LocalNotification to actually receive notifications.
 
 
+@available(iOS, deprecated: 10.0)
 public protocol UserNotificationCapable: ApplicationLaunched {
     /// Called when your app registers for user notifications.
     func requestedUserNotificationSettings() -> UIUserNotificationSettings
@@ -135,7 +136,8 @@ extension SuperDelegate {
     
     // MARK: UIApplicationDelegate
     
-    
+
+    @available(iOS, deprecated: 10.0)
     @objc(application:didRegisterUserNotificationSettings:)
     final public func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
         guard let userNotificationsCapableSelf = self as? UserNotificationCapable else {
